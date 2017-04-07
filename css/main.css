@@ -1,0 +1,45 @@
+*,
+*:before,
+*:after {
+   box-sizing: border-box;
+}
+
+/* Shared */
+body {
+  font-family: 'Archivo Narrow', sans-serif;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 100px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+
+/* Title Screen */
+.title-screen {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  bottom: 15px;
+  left: 15px;
+  min-width: 800px;
+  min-height: 500px;
+  background: url("../images/1.jpg") no-repeat center;
+  background-size: cover;
+  text-align: center;
+}
+
+.title-text-container {
+  position: relative;
+  top: 50%;
+  color: #fff;
+  transform: translateY(-50%);
+}
+
+.title-screen-name {
+  margin-bottom: 20px;
+}
