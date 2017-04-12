@@ -3,9 +3,14 @@
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="css/css-reset.css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css">
     <link rel="stylesheet" href="css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow|Yanone+Kaffeesatz" rel="stylesheet">
     <script src="js/jquery-3.2.0.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/portfolio-slider.js"></script>
+    <script src="http://gsgd.co.uk/sandbox/jquery/easing/jquery.easing.1.3.js"></script>
+    <script src="http://gsgd.co.uk/sandbox/jquery/easing/jquery.easing.compatibility.js"></script>
     <script src="js/main.js"></script>
     <title>Sophia Wu</title>
   </head>
@@ -15,22 +20,99 @@
       <div class="title-text-container">
         <div class="title-screen-name"><h1>Sophia Wu</h1></div>
         <div class="title-screen-headline">
-          <h2>
-            Full stack web developer. Life enthusiast. Aspiring artist.
-          </h2>
+          <h3>
+            Full stack web developer.
+          </h3>
         </div>
       </div>
     </div>
 
-    <div id="contact-tab">
-      <div class="circle contact-circle"></div>
-      <div class="contact-title">Contact Me</div>
+    <div class="tab" id="about-tab">
+      <div class="circle about-circle btn" data-page="about"></div>
+      <div class="about-title"><h4>About Me</h4></div>
     </div>
 
-    <section class="contact-page">
+    <div class="tab" id="skills-tab">
+      <div class="circle skills-circle btn" data-page="skills"></div>
+      <div class="skills-title"><h4>Skills</h4></div>
+    </div>
+
+    <div class="tab" id="projects-tab">
+      <div class="circle projects-circle btn" data-page="projects"></div>
+      <div class="projects-title"><h4>Projects</h4></div>
+    </div>
+
+    <div class="tab" id="artwork-tab">
+      <div class="circle artwork-circle btn" data-page="artwork"></div>
+      <div class="artwork-title"><h4>Artwork</h4></div>
+    </div>
+
+    <div class="tab" id="contact-tab">
+      <div class="circle contact-circle btn" data-page="contact"></div>
+      <div class="contact-title"><h4>Contact Me</h4></div>
+    </div>
+
+    <div class="return">
+      <div class="return-text btn"><h4>Return</h4></div>
+    </div>
+
+    <section class="skills-page page">
+      <div class="skills-container">
+        <div class="skills-languages">
+          <h2>Languages</h2>
+          <ul>
+            <li>Ruby</li>
+            <li>Python</li>
+            <li>JavaScript</li>
+            <li>HTML</li>
+            <li>CSS/Sass</li>
+            <li>C</li>
+            <li>Java</li>
+          </ul>
+        </div>
+
+        <div class="skills-tools">
+          <h2>Tools</h2>
+          <ul>
+            <li>Rails</li>
+            <li>jQuery</li>
+            <li>SQL</li>
+            <li>Rspec</li>
+            <li>AWS</li>
+            <li>Mocha</li>
+            <li>APIs</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-page page">
       <div class="profile-photo">
         <img src="images/self.jpg">
       </div>
+      <div class="about-text-container">
+        <p>Welcome to my website!</p>
+        <p>I'm Sophia Wu, a self-instructed full stack web developer and artist on the side.</p>
+        <p>I graduated Carnegie Mellon University in 2014 with a combined B.S and M.S. in chemistry. CHEMISTRY? Yes, that's how I started off. It took me almost a year working as a chemist in the real world to realize that it just wasn't for me. </p>
+        <p>Instead, what was for me was the creativity, logic, and problem-solving in programming. I soon took several programming and logic classes back at Carnegie Mellon University as a visiting student to gain valuable knowledge in algorithms and data structures.</p>
+        <p>I've spent the last year teaching myself the ins and outs of web development, mainly using this awesome online source called <a href="http://www.theodinproject.com/home">The Odin Project</a>. Through my studies, I've been able to put together some fun little projects which you can check out in my projects section.</p>
+        <p>In my free time, I enjoy drawing and painting, immersing myself in role-playing games, playing the violin, shredding the slopes, and pretending to be a food critic.
+      </div>
+    </section>
+
+    <section class="projects-page page">
+      <div class="projects-wrapper">
+        <div class="projects-column arrow projects-prev-arrow"></div>
+        <div class="projects-slide-container"></div>
+        <div class="projects-column arrow projects-next-arrow"></div>
+        <div class="projects-circles"></div>
+      </div>
+      
+      <div class="projects-preview">
+      </div>
+    </section>
+
+    <section class="contact-page page">
       <div class="contact-text-container">
         <div class="email">Email me at sophia.luxi.wu@gmail.com.</div>
         <div class="github">

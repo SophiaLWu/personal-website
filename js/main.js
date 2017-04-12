@@ -1,45 +1,126 @@
 
 $(document).ready(function() {
   hideContent();
-  titleLoad();
-  animateContactPage();
+  loadHome();
+  animatePageTitle();
   
+  $(".circle").on("click", function() {
+    var page = $(this).data("page")
+    zoomIn(page);
+    zoomOut(page);
+  });
+  
+  // ProjectsSlider.init();
+  // ProjectsSlider.currentCircle.addClass("active-projects-circle");
+  // ProjectsSlider.currentSlide.show();
+  // ProjectsSlider.defaultAdvance();
+  // ProjectsSlider.userInput();
+  
+  $(document).one("click", function() {
+    addTabs();
+  });
+
 
   /* Function Definitions */
 
-  // Initial hides certain content
+  // Initially hides certain content
   function hideContent() {
-    $(".title-screen").hide();
-    $(".contact-title").hide();
-    $(".contact-page").hide();
+    $.each([".return", ".title-screen",
+            "#about-tab", ".about-page",
+            "#skills-tab", ".skills-page", 
+            "#projects-tab", ".projects-page",
+            "#artwork-tab", ".artwork-page",  
+            "#contact-tab", ".contact-page"], function(i, el) {
+      $(el).hide();
+    });
   };
 
-  // When page loads, fades in screen and title
-  function titleLoad() {
+  // When page loads, fades in home page and title
+  function loadHome() {
     $(".title-screen").fadeIn(1500, function() {
-      $(".title-text-container").fadeIn(800);
+      $(".title-text-container").fadeIn(700);
     });
     $(".title-text-container").hide();
   }
 
-  // Animates contact page
-  function animateContactPage() {
-    $(".contact-circle").hover(
+  // Page title shows when hovering over circle
+  function animatePageTitle() {
+    $(".circle").hover(
       function() {
-        $(".contact-title").fadeIn(300);
-      }, 
+        $(this).next().fadeIn(300);
+      },
       function() {
-        $(".contact-title").fadeOut(300);
+        $(this).next().fadeOut(300);
       }
     );
+  };
 
-    $(".contact-circle").on("click", function() {
+  // Zooms in on specific page
+  function zoomIn(page) {
+    switch(page) {
+      case "about":
+        zoomInAnimations("about", "0%", "-80%", "0", "0");
+        break;
+      case "skills":
+        zoomInAnimations("skills", "-50%", "-100%", "0", "0");
+        break;
+      case "projects":
+        zoomInAnimations("projects", "0", "0", "0", "-80%");
+        break;
+      case "artwork":
+        zoomInAnimations("artwork", "-50%", "", "0", "-100%");
+        break;
+      case "contact":
+        zoomInAnimations("contact", "-100%", "0", "0", "0");
+        break;
+      default: return
+    }
+  };
+
+   // Animations when zooming into a specific page
+  function zoomInAnimations(page, top, right, bottom, left) {
+    console.log("zoom in" + page);
+    $.each(["#about-tab", "#skills-tab", "#projects-tab", 
+            "#artwork-tab", "#contact-tab"], function(i, el) {
+      $(el).hide();
+    });
+    $(".title-screen").animate({
+      top: top,
+      right: right,
+      bottom: bottom,
+      left: left,
+    }, 600);
+      $("." + page + "-page").fadeIn(900);
+    $(".return").fadeIn(900);
+  };
+
+  // Zooms back out to homepage
+  function zoomOut(page) {
+    $(".return").off("click").on("click", function(event) {
+      console.log("zoom out" + page);
+      $(".return").fadeOut(900);
+      $("." + page + "-page").fadeOut(900);
       $(".title-screen").animate({
-        top: "-100%",
-      }, 500, function() {
-        $(".contact-page").fadeIn(800);
-      });
+        top: "15px",
+        right: "15px",
+        bottom: "15px",
+        left: "15px",
+      }, 600, addTabs);
     });
   };
+
+
+  // Fades in tabs to other pages and hides tab titles
+  function addTabs() {
+    console.log("add tabs");
+    $.each(["#about-tab", "#skills-tab", "#projects-tab", "#artwork-tab", 
+            "#contact-tab"], function(i, el) {
+      $(el).fadeIn(700);
+    });
+    $.each([".about-title", ".skills-title", ".projects-title",
+            ".artwork-title", ".contact-title"], function(i, el) {
+      $(el).hide();
+    });
+  }
 
 });

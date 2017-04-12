@@ -7,8 +7,9 @@
 /* Shared */
 
 body {
-  color: #fff;
+  color: #000;
   font-family: 'Archivo Narrow', sans-serif;
+  font-stretch: expanded;
 }
 
 a {
@@ -18,21 +19,71 @@ a:visited {
   color: #fff;
 }
 
+a:hover, a:active, a:focus {
+  cursor: pointer;
+}
+
+.btn:hover, .btn:active, .btn:focus {
+  background: rgba(0,0,0,0.5);
+  cursor: pointer;
+}
+
 h1 {
   font-weight: 700;
   font-size: 100px;
 }
 
 h2 {
+  font-size: 60px;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+h4 {
+  font-size: 25px;
+  line-height: 40px;
+}
+
+li {
+  margin-top: 10px;
   font-size: 30px;
 }
 
 .circle {
   position: absolute;
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   border: 2px solid #fff;
+}
+
+.tab {
+  position: absolute;
+  display: inline;
+  height: 40px;
+}
+
+
+.page {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  bottom: 100px;
+  left: 40px;
+  background: rgba(0,0,0,0.7);
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+p {
+  margin-bottom: 20px;
+  font-size: 20px;
+  line-height: 26px;
 }
 
 
@@ -46,7 +97,7 @@ h2 {
   left: 15px;
   min-width: 1050px;
   min-height: 600px;
-  background: url("../images/7.jpg") no-repeat center;
+  background: url("../images/3.jpg") no-repeat center;
   background-size: cover;
   text-align: center;
 }
@@ -67,50 +118,117 @@ h2 {
   margin-right: 15px;
 }
 
+/* Return */
+
+.return {
+  position: absolute;
+  top: 90%;
+  width: 100%;
+  text-align: center;
+}
+
+.return-text {
+  display: inline-block;
+  padding: 2px 10px;
+  border: 2px solid white;
+}
+
+
 
 /* About Me */
 
-
-/* Contact */
-
-#contact-tab {
-  position: absolute;
-  top: 90%;
-  left: 50%;
-  display: inline;
-  height: 30px;
+#about-tab {
+  top: 35%;
+  left: 20%;
 }
 
-.contact-title {
-  margin-left: 40px;
-  font-size: 25px;
-  line-height: 30px;
+.about-title {
+  margin-left: 45px;
 }
 
-.contact-page {
-  position: absolute;
-  top: 40px;
-  right: 40px;
-  bottom: 100px;
-  left: 40px;
-  background: rgba(0,0,0,0.7);
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.about-page {
+  padding: 60px;
+}
+
+.about-text-container {
+  text-align: left;
 }
 
 .profile-photo img {
-  width: 350px;
+  width: 320px;
   height: auto;
   border: 8px solid white;
 }
 
 .profile-photo {
-  margin-right: 70px;
+  margin-right: 40px;
 }
 
-.profile-photo, .contact-text-container {
+.about-text-container, .profile-photo  {
+  display: inline-block;
+}
+
+
+
+/* Skills */
+
+#skills-tab {
+  top: 60%;
+  left: 20%;
+}
+
+.skills-title {
+  margin-left: 45px;
+}
+
+.skills-languages, .skills-tools {
+  float: left;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.skills-languages {
+  margin-right: 200px;
+}
+
+
+
+/* Projects */
+
+#projects-tab {
+  top: 35%;
+  left: 70%;
+}
+
+.projects-title {
+  margin-left: 45px;
+}
+
+
+/* Artwork */
+
+#artwork-tab {
+  top: 60%;
+  left: 70%;
+}
+
+.artwork-title {
+  margin-left: 45px;
+}
+
+
+/* Contact */
+
+#contact-tab {
+  top: 80%;
+  left: 48%;
+}
+
+.contact-title {
+  margin-left: 45px;
+}
+
+.contact-text-container {
   display: inline-block;
 }
 
