@@ -3,12 +3,7 @@ $(document).ready(function() {
   hideContent();
   loadHome();
   animatePageTitle();
-  
-  $(".circle").on("click", function() {
-    var page = $(this).data("page")
-    zoomIn(page);
-    zoomOut(page);
-  });
+  animatePage();
   
   // ProjectsSlider.init();
   // ProjectsSlider.currentCircle.addClass("active-projects-circle");
@@ -53,6 +48,15 @@ $(document).ready(function() {
         $(this).next().fadeOut(300);
       }
     );
+  };
+
+  // Animates a specific page when clicked
+  function animatePage() {
+    $(".circle").on("click", function() {
+      var page = $(this).data("page")
+      zoomIn(page);
+      zoomOut(page);
+    });
   };
 
   // Zooms in on specific page
