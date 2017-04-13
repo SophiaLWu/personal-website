@@ -5,11 +5,9 @@ $(document).ready(function() {
   animatePageTitle();
   animatePage();
   
-  // ProjectsSlider.init();
-  // ProjectsSlider.currentCircle.addClass("active-projects-circle");
-  // ProjectsSlider.currentSlide.show();
-  // ProjectsSlider.defaultAdvance();
-  // ProjectsSlider.userInput();
+  ProjectsSlider.init();
+  ProjectsSlider.defaultAdvance();
+  ProjectsSlider.userInput();
   
   $(document).one("click", function() {
     addTabs();
@@ -53,7 +51,7 @@ $(document).ready(function() {
   // Animates a specific page when clicked
   function animatePage() {
     $(".circle").on("click", function() {
-      var page = $(this).data("page")
+      var page = $(this).data("page");
       zoomIn(page);
       zoomOut(page);
     });
@@ -93,7 +91,7 @@ $(document).ready(function() {
       right: right,
       bottom: bottom,
       left: left,
-    }, 600);
+    }, 900);
       $("." + page + "-page").fadeIn(900);
     $(".return").fadeIn(900);
   };
@@ -109,7 +107,7 @@ $(document).ready(function() {
         right: "15px",
         bottom: "15px",
         left: "15px",
-      }, 600, addTabs);
+      }, 900, addTabs);
     });
   };
 
