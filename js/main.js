@@ -4,9 +4,7 @@ $(document).ready(function() {
   loadHome();
   animatePageTitle();
   animatePage();
-  
   ProjectsSlider.init();
-  ProjectsSlider.defaultAdvance();
   ProjectsSlider.userInput();
   
   $(document).one("click", function() {
@@ -108,6 +106,7 @@ $(document).ready(function() {
         bottom: "15px",
         left: "15px",
       }, 900, addTabs);
+      addTabs();
     });
   };
 
