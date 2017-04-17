@@ -7,51 +7,64 @@
     <link rel="stylesheet" href="css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow|Yanone+Kaffeesatz" rel="stylesheet">
     <script src="js/jquery-3.2.0.min.js"></script>
+    <script src="js/slider.js"></script>
     <script src="js/projects-slider.js"></script>
     <script src="js/main.js"></script>
     <title>Sophia Wu</title>
   </head>
 
   <body>
-    <div class="title-screen">
-      <div class="title-text-container">
-        <div class="title-screen-name"><h1>Sophia Wu</h1></div>
-        <div class="title-screen-headline">
-          <h3>
-            Full stack web developer.
-          </h3>
+    <div class="backdrop"></div>
+
+    <section class="main-content">
+      <header>
+        <div class="title-name"><h1>Sophia Wu</h1></div>
+        <div class="title-headline">
+          <h2>
+            Full stack web developer
+          </h2>
         </div>
-      </div>
-    </div>
+      </header>
 
-    <div class="tab" id="about-tab">
-      <div class="circle about-circle btn" data-page="about"></div>
-      <div class="about-title"><h4>About Me</h4></div>
-    </div>
+      <nav class="navbar">
+        <ul>
+          <li id="about-tab">
+            <div class="nav-btn about-btn btn" data-page="about">
+              <img src="images/icons/notebook.png" class="btn-logo">
+            </div>
+            <div class="nav-title about-title"><h4>About Me</h4></div>
+          </li>
+          <li id="skills-tab">
+            <div class="nav-btn skills-btn btn" data-page="skills">
+              <img src="images/icons/tools.png" class="btn-logo">
+            </div>
+            <div class="nav-title  skills-title"><h4>Skills</h4></div>
+          </li>
+          <li id="projects-tab">
+            <div class="nav-btn projects-btn btn" data-page="projects">
+              <img src="images/icons/computer.png" class="btn-logo">
+            </div>
 
-    <div class="tab" id="skills-tab">
-      <div class="circle skills-circle btn" data-page="skills"></div>
-      <div class="skills-title"><h4>Skills</h4></div>
-    </div>
+            <div class="nav-title  projects-title"><h4>Projects</h4></div>
+          </li>
+          <li id="artwork-tab">
+            <div class="nav-btn artwork-btn btn" data-page="artwork">
+              <img src="images/icons/brush.png" class="btn-logo">
+            </div>
+            <div class="nav-title artwork-title"><h4>Artwork</h4></div>
+          </li>
+          <li id="contact-tab">
+            <div class="nav-btn contact-btn btn" data-page="contact">
+              <img src="images/icons/email.png" class="btn-logo">
+            </div>
+            <div class="nav-title contact-title"><h4>Contact Me</h4></div>
+          </li>
+        </ul>
+      </nav>
 
-    <div class="tab" id="projects-tab">
-      <div class="circle projects-circle btn" data-page="projects"></div>
-      <div class="projects-title"><h4>Projects</h4></div>
-    </div>
+    </section>
 
-    <div class="tab" id="artwork-tab">
-      <div class="circle artwork-circle btn" data-page="artwork"></div>
-      <div class="artwork-title"><h4>Artwork</h4></div>
-    </div>
-
-    <div class="tab" id="contact-tab">
-      <div class="circle contact-circle btn" data-page="contact"></div>
-      <div class="contact-title"><h4>Contact Me</h4></div>
-    </div>
-
-    <div class="return">
-      <div class="return-text btn"><h4>Return</h4></div>
-    </div>
+    
 
     <section class="skills-page page">
       <div class="skills-container">
@@ -81,6 +94,10 @@
           </ul>
         </div>
       </div>
+
+      <div class="return">
+        <div class="return-text btn"><h4>Return</h4></div>
+      </div>
     </section>
 
     <section class="about-page page">
@@ -96,17 +113,47 @@
         <p>Currently, I'm looking for a full-time position where I can utilize my technical and artistic skills and challenge myself to build some incredible projects.</p>
         <p>In my free time, I enjoy drawing and painting, immersing myself in role-playing games, playing the violin, shredding the slopes, and pretending to be a food critic.
       </div>
+
+      <div class="return">
+        <div class="return-text btn"><h4>Return</h4></div>
+      </div>
     </section>
 
     <section class="projects-page page">
-      <div class="projects-page-wrapper">
-        <div class="projects-page-column arrow projects-page-prev-arrow"></div>
-        <div class="projects-page-slide-container projects-page-column"></div>
-        <div class="projects-page-column arrow projects-page-next-arrow"></div>
-        <div class="projects-page-circles"></div>
+      <div class="slider-page-wrapper projects-page-wrapper">
+        <div class="slider-page-column projects-page-column arrow 
+                   slider-page-prev-arrow projects-page-prev-arrow"></div>
+        <div class="slider-page-slide-container projects-page-slide-container 
+                   slider-page-column projects-page-column"></div>
+        <div class="slider-page-column projects-page-column arrow 
+                   slider-page-next-arrow projects-page-next-arrow"></div>
+        <div class="slider-page-circles projects-page-circles"></div>
       </div>
       
-      <div class="projects-preview">
+      <div class="slider-page-preview projects-page-preview">
+      </div>
+
+      <div class="return">
+        <div class="return-text btn"><h4>Return</h4></div>
+      </div>
+    </section>
+
+    <section class="artwork-page page">
+      <div class="slider-page-wrapper artwork-page-wrapper">
+        <div class="slider-page-column artwork-page-column arrow 
+                    slider-page-prev-arrow artwork-page-prev-arrow"></div>
+        <div class="slider-page-slide-container artwork-page-slide-container
+                    slider-page-column artwork-page-column"></div>
+        <div class="slider-page-column artwork-page-column arrow 
+                    slider-page-next-arrow artwork-page-next-arrow"></div>
+        <div class="slider-page-circles artwork-page-circles"></div>
+      </div>
+      
+      <div class="slider-page-preview artwork-page-preview">
+      </div>
+
+      <div class="return">
+        <div class="return-text btn"><h4>Return</h4></div>
       </div>
     </section>
 
@@ -116,6 +163,10 @@
         <div class="github">
           View my <a href="https://github.com/SophiaLWu">Github</a>.
         </div>
+      </div>
+
+      <div class="return">
+        <div class="return-text btn"><h4>Return</h4></div>
       </div>
     </section>
   </body>

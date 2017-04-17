@@ -1,57 +1,56 @@
 
 $(document).ready(function() {
   hideContent();
-  loadHome();
-  animatePageTitle();
+  loadContent();
+  animateNavbar();
   animatePage();
-  ProjectsSlider.init();
-  ProjectsSlider.userInput();
-  
-  $(document).one("click", function() {
-    addTabs();
-  });
 
+  var projectsSlider = new Slider(4, "projects");
+  projectsSlider.init();
+  projectsSlider.userInput();
 
-  /* Function Definitions */
+  var artworkSlider = new Slider(7, "artwork");
+  artworkSlider.init();
+  artworkSlider.userInput();
 
-  // Initially hides certain content
+  // Initially hides all content on page
   function hideContent() {
-    $.each([".return", ".title-screen",
-            "#about-tab", ".about-page",
-            "#skills-tab", ".skills-page", 
-            "#projects-tab", ".projects-page",
-            "#artwork-tab", ".artwork-page",  
-            "#contact-tab", ".contact-page"], function(i, el) {
+    $.each([".main-content", 
+            ".return",
+            ".about-page",
+            ".skills-page", 
+            ".projects-page",
+            ".artwork-page",  
+            ".contact-page"], function(i, el) {
       $(el).hide();
     });
   };
 
-  // When page loads, fades in home page and title
-  function loadHome() {
-    $(".title-screen").fadeIn(1500, function() {
-      $(".title-text-container").fadeIn(700);
-    });
-    $(".title-text-container").hide();
+  // When page loads, fades in home page content
+  function loadContent() {
+    $(".main-content").fadeIn(3000);
   }
 
-  // Page title shows when hovering over circle
-  function animatePageTitle() {
-    $(".circle").hover(
+  // Animations for when hovering over navbar buttons
+  function animateNavbar() {
+    $(".nav-btn").hover(
       function() {
         $(this).next().fadeIn(300);
+        $(this).find("img").css({ top: "-5px" });
       },
       function() {
         $(this).next().fadeOut(300);
+        $(this).find("img").css({ top: "0" });
       }
     );
   };
 
   // Animates a specific page when clicked
   function animatePage() {
-    $(".circle").on("click", function() {
+    $(".nav-btn").on("click", function() {
       var page = $(this).data("page");
       zoomIn(page);
-      zoomOut(page);
+      zoomOut(page)
     });
   };
 
@@ -80,33 +79,33 @@ $(document).ready(function() {
    // Animations when zooming into a specific page
   function zoomInAnimations(page, top, right, bottom, left) {
     console.log("zoom in" + page);
-    $.each(["#about-tab", "#skills-tab", "#projects-tab", 
-            "#artwork-tab", "#contact-tab"], function(i, el) {
-      $(el).hide();
-    });
-    $(".title-screen").animate({
-      top: top,
-      right: right,
-      bottom: bottom,
-      left: left,
-    }, 900);
-      $("." + page + "-page").fadeIn(900);
+    // $.each(["#about-tab", "#skills-tab", "#projects-tab", 
+    //         "#artwork-tab", "#contact-tab"], function(i, el) {
+    //   $(el).hide();
+    // });
+    // $(".title-screen").animate({
+    //   top: top,
+    //   right: right,
+    //   bottom: bottom,
+    //   left: left,
+    // }, 900);
+    $("." + page + "-page").fadeIn(900);
     $(".return").fadeIn(900);
   };
 
   // Zooms back out to homepage
   function zoomOut(page) {
-    $(".return").off("click").on("click", function(event) {
-      console.log("zoom out" + page);
+    console.log("zoom out" + page);
+    $(".return").on("click", function() {
       $(".return").fadeOut(900);
       $("." + page + "-page").fadeOut(900);
-      $(".title-screen").animate({
-        top: "15px",
-        right: "15px",
-        bottom: "15px",
-        left: "15px",
-      }, 900, addTabs);
-      addTabs();
+    // $(".title-screen").animate({
+    //   top: "15px",
+    //   right: "15px",
+    //   bottom: "15px",
+    //   left: "15px",
+    // }, 900, addTabs);
+      // addTabs();
     });
   };
 
