@@ -30,7 +30,7 @@ function Slider (numberSlides, page) {
 
   this.addSlides = function() {
     for (var i = 1; i <= self.numberSlides; i++) {
-      $("." + self.page + "-page-slide-container").append("<div class='" + self.page + "-page-slide'><img src='images/" + self.page + "/" + i + ".jpg'><p>" + i + "</p></div>");
+      $("." + self.page + "-page-slide-container").append("<div class='" + self.page + "-page-slide' data-slide-num='" + i + "'><img src='images/" + self.page + "/" + i + ".jpg'></div>");
     }
   }
 
@@ -111,14 +111,14 @@ function Slider (numberSlides, page) {
   }
 
   this.previewShow = function(type) {
-    var slideNumber = parseInt(self.currentSlide.find("p").text());
-    var prevSlideNumber = self.newSlideNumber(type, slideNumber)
+    var slideNumber = parseInt(self.currentSlide.data("slide-num"));
+    var prevSlideNumber = self.newSlideNumber(type, slideNumber);
     $("<div class='" + self.page + "-page-preview-slide'><img src='images/" + self.page + "/" + prevSlideNumber 
        + ".jpg'></div>").appendTo("." + self.page + "-page-preview").hide().fadeIn(500);
     if (type === "prev") {
-      $("." + self.page + "-page-preview-slide").addClass("." + self.page + "-page-prev-preview-slide");
+      $("." + self.page + "-page-preview-slide").addClass(self.page + "-page-prev-preview-slide");
     } else {
-      $("." + self.page + "-page-preview-slide").addClass("." + self.page + "-page-next-preview-slide");
+      $("." + self.page + "-page-preview-slide").addClass(self.page + "-page-next-preview-slide");
     }
   }
 

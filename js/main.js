@@ -1,6 +1,6 @@
 
 $(document).ready(function() {
-  hideContent();
+  // hideContent();
   loadContent();
   animateNavbar();
   animatePage();
@@ -15,8 +15,7 @@ $(document).ready(function() {
 
   // Initially hides all content on page
   function hideContent() {
-    $.each([".main-content", 
-            ".return",
+    $.each([
             ".about-page",
             ".skills-page", 
             ".projects-page",
@@ -89,7 +88,8 @@ $(document).ready(function() {
     //   bottom: bottom,
     //   left: left,
     // }, 900);
-    $("." + page + "-page").fadeIn(900);
+    $("." + page + "-page").css("visibility", "visible").hide().fadeIn(900);
+    // $("." + page + "-page").fadeIn(900);
     $(".return").fadeIn(900);
   };
 

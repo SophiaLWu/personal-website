@@ -50,10 +50,11 @@ h4 {
   bottom: 40px;
   left: 40px;
   z-index: 2;
+  display: flex;
+  visibility: hidden;
   min-height: 600px;
   background: rgba(0,0,0,0.7);
   text-align: center;
-  display: flex;
   justify-content: center;
   align-items: center;
 }
@@ -86,7 +87,7 @@ p {
 
 .main-content {
   position: relative;
-  display: block;
+  display: none;
   top: 150px;
   width: 100%;
   text-align: center;
@@ -143,6 +144,7 @@ header {
 .return {
   position: absolute;
   top: 90%;
+  display: none;
   width: 100%;
   text-align: center;
 }
@@ -207,6 +209,8 @@ header {
 /* Projects and Artwork*/
 
 .slider-page-wrapper {
+  display: relative;
+  top: 10px;
   text-align: center;
 }
 
@@ -238,8 +242,8 @@ header {
 
 .slider-page-slide-container {
   position: relative;
-  width: 700px;
-  height: 500px;
+  width: 670px;
+  height: 470px;
   text-align: center;
   overflow: hidden;
 }
@@ -265,7 +269,7 @@ header {
 }
 
 .slider-page-circles {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .projects-page-circle,
@@ -292,6 +296,27 @@ header {
 .active-projects-page-circle,
 .active-artwork-page-circle {
   background: #fff;
+}
+
+
+.projects-page-prev-preview-slide,
+.artwork-page-prev-preview-slide {
+  position: absolute;
+  top: 285px;
+  left: 100px;
+}
+
+.projects-page-next-preview-slide,
+.artwork-page-next-preview-slide {
+  position: absolute;
+  top: 285px;
+  right: 100px;
+}
+
+.projects-page-preview img,
+.artwork-page-preview img {
+  width: 140px;
+  height: auto;
 }
 
 
