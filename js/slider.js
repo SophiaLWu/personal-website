@@ -10,12 +10,12 @@ function Slider (numberSlides, page) {
     self.clickCircle();
     $("." + self.page + "-page-next-arrow").on("click", self.nextSlide);
     $("." + self.page + "-page-prev-arrow").on("click", self.previousSlide);
-    $("." + self.page + "-page-prev-arrow").hover(function() {
-      self.previewShow("prev");
-    }, self.previewHide);
-    $("." + self.page + "-page-next-arrow").hover(function() {
-      self.previewShow("next");
-    }, self.previewHide);
+    // $("." + self.page + "-page-prev-arrow").hover(function() {
+    //   self.previewShow("prev");
+    // }, self.previewHide);
+    // $("." + self.page + "-page-next-arrow").hover(function() {
+    //   self.previewShow("next");
+    // }, self.previewHide);
   }
 
   this.init = function() {

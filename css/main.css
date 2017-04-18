@@ -1,15 +1,19 @@
+
+/* Shared */
+
 *,
 *:before,
 *:after {
    box-sizing: border-box;
 }
 
-/* Shared */
-
 body {
   color: #fff;
   font-family: 'Archivo Narrow', sans-serif;
-  /*font-stretch: expanded;*/
+}
+
+a {
+  color: #fff;
 }
 
 a:visited {
@@ -30,33 +34,20 @@ h1 {
 }
 
 h2 {
-  font-size: 50px;
+  font-size: 60px;
 }
 
 h3 {
-  font-size: 30px;
+  font-size: 50px;
 }
 
 h4 {
-  font-size: 30px;
-  line-height: 40px;
+  font-size: 40px;
 }
 
-
-.page {
-  position: absolute;
-  top: 40px;
-  right: 40px;
-  bottom: 40px;
-  left: 40px;
-  z-index: 2;
-  display: flex;
-  visibility: hidden;
-  min-height: 600px;
-  background: rgba(0,0,0,0.7);
-  text-align: center;
-  justify-content: center;
-  align-items: center;
+h5 {
+  font-size: 30px;
+  line-height: 40px;
 }
 
 p {
@@ -64,6 +55,11 @@ p {
   font-size: 20px;
   line-height: 26px;
 }
+
+small {
+  font-size: 12px;
+}
+
 
 
 /* Backdrop */
@@ -77,10 +73,11 @@ p {
   z-index: -1;
   min-width: 1050px;
   min-height: 600px;
-  background: url("../images/2.jpg") no-repeat center;
+  background: url("../images/background.jpg") no-repeat center;
   background-size: cover;
   text-align: center;
 }
+
 
 
 /* Main Content */
@@ -92,6 +89,7 @@ p {
   width: 100%;
   text-align: center;
 }
+
 
 
 /* Header */
@@ -139,6 +137,7 @@ header {
 }
 
 
+
 /* Return */
 
 .return {
@@ -156,7 +155,35 @@ header {
 }
 
 .return-text:hover {
-  background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.8);
+}
+
+
+
+/* Pages */
+
+.page {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  bottom: 40px;
+  left: 40px;
+  z-index: 2;
+  display: flex;
+  visibility: hidden;
+  min-width: 1100px;
+  min-height: 600px;
+  background: rgba(0,0,0,0.8);
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-title {
+  position: absolute;
+  top: 0;
+  margin-top: 15px;
+  text-align: center;
 }
 
 
@@ -164,15 +191,16 @@ header {
 /* About Me */
 
 .about-page {
-  padding: 60px;
+  padding: 0 50px;
 }
 
 .about-text-container {
+  margin-top: 25px;
   text-align: left;
 }
 
 .profile-photo img {
-  width: 320px;
+  width: 250px;
   height: auto;
   border: 8px solid white;
 }
@@ -210,7 +238,6 @@ header {
 
 .slider-page-wrapper {
   display: relative;
-  top: 10px;
   text-align: center;
 }
 
@@ -242,8 +269,9 @@ header {
 
 .slider-page-slide-container {
   position: relative;
-  width: 670px;
-  height: 470px;
+  width: 630px;
+  height: 430px;
+  margin-top: 10px;
   text-align: center;
   overflow: hidden;
 }
@@ -257,15 +285,21 @@ header {
   left: 0;
   display: inline-block;
   margin: auto;
-  width: 670px;
-  height: 470px;
+  width: 630px;
+  height: 430px;
   overflow: hidden;
 }
 
 .projects-page-slide img,
 .artwork-page-slide img {
-  max-width: 670px;
-  max-height: 470px;
+  max-width: 620px;
+  max-height: 420px;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .slider-page-circles {
@@ -320,17 +354,80 @@ header {
 }
 
 
-/* Contact */
+
+/* Contact Me */
 
 .contact-text-container {
   display: inline-block;
 }
 
-.email, .github {
+.email p {
   font-size: 30px;
 }
 
 .email {
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
+
+
+
+/* Footer */
+
+footer {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  visibility: hidden;
+  margin-bottom: 5px;
+}
+
+footer a {
+  text-decoration: none;
+}
+
+.name-footer {
+  display: inline-block;
+  line-height: 25px;
+  vertical-align: top;
+}
+
+.social-media-icon {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+}
+
+.facebook-icon {
+  background: url("../images/social-media-icons/facebook-color.png") no-repeat center;
+  background-size: cover;
+}
+
+.facebook-icon:hover {
+  background: url("../images/social-media-icons/facebook-bw.png") no-repeat center;
+  background-size: cover;
+}
+
+.github-icon {
+  background: url("../images/social-media-icons/github-color.png") no-repeat center;
+  background-size: cover;
+}
+
+.github-icon:hover {
+  background: url("../images/social-media-icons/github-bw.png") no-repeat center;
+  background-size: cover;
+}
+
+.linkedin-icon {
+  background: url("../images/social-media-icons/linkedin-color.png") no-repeat center;
+  background-size: cover;
+}
+
+.linkedin-icon:hover {
+  background: url("../images/social-media-icons/linkedin-bw.png") no-repeat center;
+  background-size: cover;
+}
+
+
 
