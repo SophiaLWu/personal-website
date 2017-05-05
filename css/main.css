@@ -22,6 +22,7 @@ a:visited {
 
 a:hover, a:active, a:focus {
   cursor: pointer;
+  font-weight: bold;
 }
 
 .btn:hover, .btn:active, .btn:focus {
@@ -217,14 +218,20 @@ header {
 
 /* Skills */
 
-.skills-languages, .skills-tools {
+.skills-languages {
   float: left;
-  text-align: left;
-  vertical-align: middle;
 }
 
-.skills-languages {
-  margin-right: 200px;
+.skills-frameworks {
+  display: inline-block;
+}
+
+.skills-tools {
+  float: right;
+}
+
+.skills-languages, .skills-frameworks {
+  margin-right: 100px;
 }
 
 .skills-page li {
@@ -294,12 +301,18 @@ header {
 .artwork-page-slide img {
   max-width: 620px;
   max-height: 420px;
+  vertical-align: middle;
   position: absolute;
   margin: auto;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+}
+
+.projects-page-slide img {
+  max-width: 580px;
+  max-height: 380px;
 }
 
 .slider-page-circles {
@@ -351,6 +364,19 @@ header {
 .artwork-page-preview img {
   width: 140px;
   height: auto;
+}
+
+
+
+/* Projects */
+
+.project-description {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  text-align: center;
+  margin-bottom: 3px;
 }
 
 
